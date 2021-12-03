@@ -13,14 +13,14 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 # Download TBB
 include(src/lib/tbb/cmake/TBBBuild.cmake)
 include(src/lib/tbb/cmake/TBBGet.cmake)
-tbb_get(SAVE_TO src/lib/tbb SOURCE_CODE)
+tbb_get(SAVE_TO src/lib/tbb SOURCE_CODE RELEASE_TAG "v2020.3")
 tbb_build(
-    TBB_ROOT src/lib/tbb/v2021/oneTBB-2021.4.0
+    TBB_ROOT src/lib/tbb/v2020/oneTBB-2020.3
     USER_DEFINED_ARGS "tbb_build_dir=src/lib/tbb"
-    CONFIG_DIR src/lib/tbb/v2021/oneTBB-2021.4.0
+    CONFIG_DIR src/lib/tbb/v2020/oneTBB-2020.3
 )
 
-include_directories(src src/lib src/lib/tbb/v2021/oneTBB-2021.4.0/include)
+include_directories(src src/lib src/lib/tbb/v2020/oneTBB-2020.3/include)
 link_directories(tbb_cmake_build/tbb_cmake_build_subdir_release)
 
 if ("$ENV{DIR_LIB}" STREQUAL "")
