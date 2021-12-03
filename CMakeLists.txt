@@ -15,12 +15,12 @@ include(src/lib/tbb/cmake/TBBBuild.cmake)
 include(src/lib/tbb/cmake/TBBGet.cmake)
 tbb_get(SAVE_TO src/lib/tbb SOURCE_CODE)
 tbb_build(
-    TBB_ROOT src/lib/tbb/v2020/oneTBB-2020.2
+    TBB_ROOT src/lib/tbb/v2021/oneTBB-2021.4.0
     USER_DEFINED_ARGS "tbb_build_dir=src/lib/tbb"
-    CONFIG_DIR src/lib/tbb/v2020/oneTBB-2020.2
+    CONFIG_DIR src/lib/tbb/v2021/oneTBB-2021.4.0
 )
 
-include_directories(src src/lib src/lib/tbb/v2020/oneTBB-2020.2/include)
+include_directories(src src/lib src/lib/tbb/v2021/oneTBB-2021.4.0/include)
 link_directories(tbb_cmake_build/tbb_cmake_build_subdir_release)
 
 if ("$ENV{DIR_LIB}" STREQUAL "")
