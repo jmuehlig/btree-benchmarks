@@ -207,7 +207,7 @@ template <class Key> struct BTreeInner : public BTreeInnerBase
 
     virtual ~BTreeInner()
     {
-        for (auto i = 0u; i < count; i++)
+        for (auto i = 0u; i <= count; i++)
         {
             if (children[i] != nullptr)
             {
